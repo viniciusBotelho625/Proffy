@@ -1,36 +1,51 @@
 import React from 'react';
+import api from '../../services/api';
 
 import whatsappIcon from '../../assents/imagens/icons/whatsapp.svg';
 
 import './styles.css';
 
-function TeacherItem() {
+export interface Teacher {
+    id: number
+    avatar: string;
+    bio: string;
+    cost: number;
+    name: string;
+    subject: string;
+    whatsapp: string;
+}
+interface teachersItemProps {
+    teacher: Teacher;
+}
+
+const TeacherItem: React.FC<teachersItemProps> = ({ teacher}) => {
+    function createNewConnection() {
+        api.post('connections', {
+            user_id: teacher.id,
+        })
+    }
+
     return (
         <article className="teacher-item">
             <header>
-                <img src="https://avatars3.githubusercontent.com/u/58275652?s=460&u=d0e6003dcb493d1ff1017455897ce7b6607cb7e4&v=4" alt="Vinicius Botelho"/>
+                <img src={teacher.avatar} alt={teacher.name}/>
                 <div>
-                    <strong>Vinicius Botelho</strong>
-                    <span>Química</span>
+                    <strong>{teacher.name}</strong>
+                    <span>{teacher.subject}</span>
                 </div>
             </header>
         
-            <p>
-                Química é a ciência que estuda a composição, estrutura, propriedades da matéria. 
-                <br></br>
-                <br></br>
-                Com isso as mudanças sofridas por ela durante as reações químicas e a sua relação com a energia. 
-            </p>
+            <p>{teacher.bio}</p>
 
             <footer>
                 <p>
-                    Preço/hora
-                    <strong>R$ 80,00</strong>
+                    Preço/hora 
+                    <strong>R${teacher.cost}</strong>
                 </p>
-                <button type="button">
+                <a target='_blank' onClick={createNewConnection} href={`https://wa.me/${teacher.whatsapp}`}>
                     <img src={whatsappIcon} alt="WhatsApp"/>
                     Entrar em contato
-                </button>
+                </a>
             </footer>
         </article>
     );
