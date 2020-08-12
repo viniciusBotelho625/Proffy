@@ -13,8 +13,12 @@ import styles from './styles';
 function Landing() {
     const { navigate } = useNavigation();
 
-    function headleNavigationToGiveClassesPage() {
+    function handleNavigationToGiveClassesPage() {
         navigate('GiveClasses');
+    }
+
+    function handleNavigationToStudyPages() {
+        navigate('Study');
     }
 
     return (
@@ -27,13 +31,19 @@ function Landing() {
             </Text>
 
             <View style={styles.buttonsContainer}>
-                <RectButton style={[styles.button, styles.buttonPrimary]}>
+                <RectButton 
+                    onPress={handleNavigationToStudyPages} 
+                    style={[styles.button, styles.buttonPrimary]}
+                >
                     <Image source={studyIcon}/>
 
                     <Text style={styles.buttonText}>Estudar</Text>
                 </RectButton>
 
-                <RectButton onPress={headleNavigationToGiveClassesPage} style={[styles.button, styles.buttonSecondary]}>
+                <RectButton 
+                    onPress={handleNavigationToGiveClassesPage} 
+                    style={[styles.button, styles.buttonSecondary]}
+                >
                     <Image source={giveClassesIcon}/>
 
                     <Text style={styles.buttonText}>Dar aulas</Text>
