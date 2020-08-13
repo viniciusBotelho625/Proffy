@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, Text } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
-import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
+// import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 import unfavoriteIcon from '../../assets/images/icons/unfavorite.png';
 import whatsaaIcon from '../../assets/images/icons/whatsapp.png';
 
