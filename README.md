@@ -20,9 +20,9 @@
 <p>O Proffy é uma plataforma de estudos online, onde alunos podem se conectar com professores de diversas matérias, afim de agendar aulas.</p>
 <br></br>
 <p align="center"> 
-  <img src=".github/HomeMobile.png" height="500">
-  <img src=".github/Favoritos.png" height="500" >
-  <img src=".github/Formulário.png" height="500" >
+  <img src=".github/HomeMobile.png" height="500" width="25%">
+  <img src=".github/Favoritos.png" height="500"  width="25%">
+  <img src=".github/Formulário.png" height="500"  width="46%">
 </p>
 <h3>Como contribuir 😃</h3>
 <ul>
